@@ -5,4 +5,5 @@ bat_data <-
   mutate(bat_data, 
          Site = as.factor(Site),
          Habitat = as.factor(Habitat),
-         Season = as.factor(Season))
+         Season = as.factor(Season)) %>% 
+  filter(bat_data, Site != "Avoca")
