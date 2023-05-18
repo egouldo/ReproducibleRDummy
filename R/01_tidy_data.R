@@ -6,4 +6,6 @@ bat_data <-
          Site = as.factor(Site),
          Habitat = as.factor(Habitat),
          Season = as.factor(Season)) %>% 
-  filter(bat_data, Site != "Avoca")
+  filter(Site != "Avoca") %>% 
+  dplyr::mutate(Taust_Vdarl = Taustralis + Vdarlingtoni) %>% 
+  select(-Taustralis, -Vdarlingtoni)
